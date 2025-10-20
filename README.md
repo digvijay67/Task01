@@ -49,4 +49,20 @@ The system ensures database integrity with **foreign keys** and **auto-increment
 - **MySQL 8+**
 - **MySQL Workbench** (or any MySQL client)
 - JDBC Connector (MySQL Connector/J)
-- IDE (VS Code insider)  
+- IDE (VS Code insider)
+
+
+Tips -- for Running Your Java + MySQL Project in VS Code
+
+Run MySQL / My Workbench First
+Before running your Java program, make sure your MySQL server is running.
+Open MySQL Workbench and execute all your RDBMS SQL scripts (creating the database and tables) first.
+This ensures your database and tables exist before Java tries to connect.
+Use Correct Database Path in Java.
+
+In your Java code, make sure the JDBC URL matches your database:
+String url = "jdbc:mysql://localhost:3306/library_db";
+String user = "root";
+String password = "Root"; // change if needed
+
+The database name in the URL (library_db) should be the same as the one you created in MySQL Workbench.
