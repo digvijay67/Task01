@@ -22,12 +22,12 @@ public class Issuebook {
             sc.nextLine();
 
             if (!recordExists(con, "Student", "student_id", studentId)) {
-                System.out.println("❌ Student not found!");
+                System.out.println("Student not found!");
                 return;
             }
 
             if (!recordExists(con, "Book", "book_id", bookId)) {
-                System.out.println("❌ Book not found!");
+                System.out.println("Book not found!");
                 return;
             }
             String sql = "INSERT INTO Book_Issue (student_id, book_id) VALUES (?, ?)";
@@ -36,7 +36,7 @@ public class Issuebook {
             pstmt.setInt(2, bookId);
             pstmt.executeUpdate();
 
-            System.out.println("✅ Book issued successfully!");
+            System.out.println("Book issued successfully!");
 
             String query = """
                     SELECT bi.issue_id, s.student_name, b.book_name, bi.issue_datetime
@@ -59,7 +59,7 @@ public class Issuebook {
 
             con.close();
         } catch (Exception e) {
-            System.out.println("❌ Error: " + e.getMessage());
+            System.out.println(" Error: " + e.getMessage());
             e.printStackTrace();
         }
 
