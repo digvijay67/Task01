@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configuration": [
+        {
+            "type": "java",
+            "name": "Run practical01",
+            "resuest": "launch",
+            "mainClass": "Task01.Practical01",
+            "classpath":[
+                "lib/mysql-connector-j-9.4.0.jar"
+            ]
+        }
+    ]
+}
